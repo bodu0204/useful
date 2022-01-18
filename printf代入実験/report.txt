@@ -1,0 +1,45 @@
+test01
+n変換指定子とは
+
+	ryoakira@ryoakiranoMacBook-Pro printf代入実験 % gcc -Wall -Wextra -Werror test01.c
+	ryoakira@ryoakiranoMacBook-Pro printf代入実験 % ./a.out
+	&c = .
+	&s = .
+	&i = .
+	&l = .
+	str =
+	ryoakira@ryoakiranoMacBook-Pro printf代入実験 %
+
+存在しないのかも…
+
+
+test02
+長さ修飾子について
+
+	ryoakira@ryoakiranoMacBook-Pro printf代入実験 % gcc test02.c
+	...
+	17 warnings generated.
+	ryoakira@ryoakiranoMacBook-Pro printf代入実験 % ./a.out
+	(int)%hhu = 255.
+	(int)%hu = 65535.
+	(int)%u = 4294967295.
+	(int)%lu = 4294967295.
+	(int)%llu = 4294967295.
+	(int)%qu = 4294967295.
+	(int)%Lu = 4294967295.
+	(int)%ju = 4294967295.
+	(int)%zu = 4294967295.
+	(int)%tu = 4294967295.
+	(long)%hhu = 255.
+	(long)%hu = 65535.
+	(long)%u = 4294967295.
+	(long)%lu = 18446744073709551615.
+	(long)%llu = 18446744073709551615.
+	(long)%qu = 18446744073709551615.
+	(long)%Lu = 4294967295.
+	(long)%ju = 18446744073709551615.
+	(long)%zu = 18446744073709551615.
+	(long)%tu = 18446744073709551615.
+	ryoakira@ryoakiranoMacBook-Pro printf代入実験 %
+
+読み取る量はそれぞれ、h:1B, hh:2B, default:4B, l:8B, ll:8B, q:8B, L:4B, j:8B, z:8B, t:8B
