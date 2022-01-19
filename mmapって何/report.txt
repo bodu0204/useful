@@ -95,11 +95,20 @@ test02
 		>                   		I wrote something now         		I wrote somethi
 
 メモリの中身を書き換えると原本も書き換わる。メモリは共有されている。
+flagsをMAP_PRIVATEにすると書き替わらない。(02-1)
 
 
+test03
+標準入力との相性
 
+	ryoakira@ryoakiranoMacBook-Pro mmapって何 % gcc -Wall -Wextra -Werror test03.c
+	ryoakira@ryoakiranoMacBook-Pro mmapって何 % ./a.out
 
+	content = 0xffffffffffffffff
+	zsh: segmentation fault  ./a.out
+	ryoakira@ryoakiranoMacBook-Pro mmapって何 %
 
+標準入力とメモリを共有することは許されていない
 
 
 
