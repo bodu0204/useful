@@ -14,22 +14,21 @@ void showll(long long	i);
 
 int main (void)
 {
-	wstr("\n\n\n");
-	showfile(stdout);
-	wstr("\n\n\n");
-	putchar('a');
-	putchar('a');
-	showfile(stdout);
-	wstr("\n\n\n");
 	fflush(stdout);
-	showfile(stdout);
-	wstr("\n\n\n");
-	putchar('a');
-	showfile(stdout);
-	wstr("\n\n\n");
-	fflush(stdout);
-	showfile(stdout);
-	wstr("\n\n\n");
+	stdout->_bf._base = malloc(4096);
+	stdout->_bf._size = 4096;
+	stdout->_p = stdout->_bf._base;
+	stdout->_flags = 2185;
+	stdout->_lbfsize = -4096;
+	stdout->_blksize = 4096;
+	stdout->_p[0] = 'a';
+	stdout->_p++;
+	stdout->_w--;
+	while (1)
+	{
+		/* code */
+	}
+
 	return (0);
 }
 
