@@ -10,6 +10,6 @@ int main (void)
 	printf("%%f = %f/\n", 0.1);
 	printf("%%f = %f/\n", 0.123456489);
 	printf("%%f = %f/\n", 54321.123456489);
-	printf("%%d = %#10.6x/\n", i);
+	printf("%%d = %#.5x/\n", 0);
 	return (0);
 }
