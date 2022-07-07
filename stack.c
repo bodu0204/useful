@@ -1,9 +1,9 @@
 #include "debug.h"
-void getstack(int i);
+void	getstack(int i);
 
 int	main(int argc, char *argv[])
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (i < 1)
@@ -14,7 +14,7 @@ int	main(int argc, char *argv[])
 
 void	getstack(int i)
 {
-	int stack[i];
+	int	stack[i];
 
 	printf("i = %d\n", i);
 	printf("sizeof(stack) = %zu\n", sizeof(stack));
