@@ -13,30 +13,6 @@
 #define TIME printf("[(%s/%d) %s ]%lf[s]\n", __FILE__, __LINE__, __func__, time_diff()); fflush(stdin);
 #define STOP {char c; read(STDIN_FILENO, &c, sizeof(char));}
 
-double	time_diff(void);
-
-#ifndef double_time_diff_void
-	#define double_time_diff_void
-	double	time_diff(void)
-	{
-		static struct timespec	p = {0};
-		struct timespec			n;
-		unsigned int			sec;
-		int						nsec;
-		if (!p.tv_sec)
-		{
-			clock_gettime(CLOCK_REALTIME, &p);
-			return (0);
-		}
-		clock_gettime(CLOCK_REALTIME, &n);
-		sec = n.tv_sec - p.tv_sec;
-		nsec = n.tv_nsec - p.tv_nsec;
-		p = n;
-		return ((double)sec + (double)nsec / (1000 * 1000 * 1000));
-	}
-#endif
-
-
 #endif
 
 /* 一定回数でプログラムを強制終了 */
