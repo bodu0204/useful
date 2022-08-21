@@ -15,6 +15,21 @@
 
 #endif
 
+/*ショートカット
+
+
+#include "debug.h"
+
+#ifndef _H 
+#include ""
+#endif
+
+
+
+
+
+ */
+
 /* 一定回数でプログラムを強制終了 */
 
 //* test */static	size_t stc = 0;
@@ -46,20 +61,3 @@
 //* test */		p = n;
 //* test */		return ((double)sec + (double)nsec / (1000 * 1000 * 1000));
 //* test */	}
-
-
-
-/*ショートカット
-
-
-#include "debug.h"
-
-#ifndef _H 
-#include ""
-#endif
-
-
-
-
-
- */
