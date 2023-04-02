@@ -1,4 +1,4 @@
-//version:2.0.0
+//version:2.1.0
 
 #ifndef DEBUG_H
 #define DEBUG_H
@@ -23,13 +23,13 @@
 #define Tp(i) printf("[(%s/%d) %s ]%s:%p\n", __FILE__, __LINE__, __func__, #i, (void *)(i)); fflush(stdin);
 #define Ts(i) printf("[(%s/%d) %s ]%s:%s\n", __FILE__, __LINE__, __func__, #i, (char *)(i)); fflush(stdin);
 #define Tc(i) printf("[(%s/%d) %s ]%s:%c\n", __FILE__, __LINE__, __func__, #i, (char)(i)); fflush(stdin);
-#define FORn(i,j) {for(size_t test_arg = 0; test_arg j; test_arg++){printf("[(%s/%d) %s ]%s[%zu]:%ld\n", __FILE__, __LINE__, __func__, #i, test_arg, (long)(i[test_arg])); fflush(stdin);}}
-#define FORu(i,j) {for(size_t test_arg = 0; test_arg j; test_arg++){printf("[(%s/%d) %s ]%s[%zu]:%ld\n", __FILE__, __LINE__, __func__, #i, test_arg, (unsigned long)(i[test_arg])); fflush(stdin);}}
-#define FORx(i,j) {for(size_t test_arg = 0; test_arg j; test_arg++){printf("[(%s/%d) %s ]%s[%zu]:%ld\n", __FILE__, __LINE__, __func__, #i, test_arg, (unsigned long)(i[test_arg])); fflush(stdin);}}
-#define FORd(i,j) {for(size_t test_arg = 0; test_arg j; test_arg++){printf("[(%s/%d) %s ]%s[%zu]:%ld\n", __FILE__, __LINE__, __func__, #i, test_arg, (double)(i[test_arg])); fflush(stdin);}}
-#define FORp(i,j) {for(size_t test_arg = 0; test_arg j; test_arg++){printf("[(%s/%d) %s ]%s[%zu]:%ld\n", __FILE__, __LINE__, __func__, #i, test_arg, (void *)(i[test_arg])); fflush(stdin);}}
-#define FORs(i,j) {for(size_t test_arg = 0; test_arg j; test_arg++){printf("[(%s/%d) %s ]%s[%zu]:%ld\n", __FILE__, __LINE__, __func__, #i, test_arg, (char *)(i[test_arg])); fflush(stdin);}}
-#define FORc(i,j) {for(size_t test_arg = 0; test_arg j; test_arg++){printf("[(%s/%d) %s ]%s[%zu]:%ld\n", __FILE__, __LINE__, __func__, #i, test_arg, (char)(i[test_arg])); fflush(stdin);}}
+#define FORn(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (long)(x[i])); fflush(stdin);}printf("\n");}
+#define FORu(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (unsigned long)(x[i])); fflush(stdin);}printf("\n");}
+#define FORx(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (unsigned long)(x[i])); fflush(stdin);}printf("\n");}
+#define FORd(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (double)(x[i])); fflush(stdin);}printf("\n");}
+#define FORp(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (void *)(x[i])); fflush(stdin);}printf("\n");}
+#define FORs(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (char *)(x[i])); fflush(stdin);}printf("\n");}
+#define FORc(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (char)(x[i])); fflush(stdin);}printf("\n");}
 #define TAKE(i,j) {static size_t test_arg = 0; if(!(test_arg % j)){i} test_arg++;}
 #define STOP {char c; read(STDIN_FILENO, &c, sizeof(char));}
 
