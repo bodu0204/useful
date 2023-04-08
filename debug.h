@@ -33,6 +33,16 @@
 #define TAKE(i,j) {static size_t test_arg = 0; if(!(test_arg % j)){i} test_arg++;}
 #define STOP {char c; read(STDIN_FILENO, &c, sizeof(char));}
 
+#define E fprintf(stderr, "[(%s/%d) %s ]\n", __FILE__, __LINE__, __func__); fflush(stderr);
+#define E_ fprintf(stderr, "---------------------------------------------[(%s/%d) %s ]\n", __FILE__, __LINE__, __func__); fflush(stderr);
+#define En(i) fprintf(stderr, "[(%s/%d) %s ]%s:%ld\n", __FILE__, __LINE__, __func__, #i, (long)(i)); fflush(stderr);
+#define Eu(i) fprintf(stderr, "[(%s/%d) %s ]%s:%lu\n", __FILE__, __LINE__, __func__, #i, (unsigned long)(i)); fflush(stderr);
+#define Ex(i) fprintf(stderr, "[(%s/%d) %s ]%s:%lx\n", __FILE__, __LINE__, __func__, #i, (unsigned long)(i)); fflush(stderr);
+#define Ed(i) fprintf(stderr, "[(%s/%d) %s ]%s:%lf\n", __FILE__, __LINE__, __func__, #i, (double)(i)); fflush(stderr);
+#define Ep(i) fprintf(stderr, "[(%s/%d) %s ]%s:%p\n", __FILE__, __LINE__, __func__, #i, (void *)(i)); fflush(stderr);
+#define Es(i) fprintf(stderr, "[(%s/%d) %s ]%s:%s\n", __FILE__, __LINE__, __func__, #i, (char *)(i)); fflush(stderr);
+#define Ec(i) fprintf(stderr, "[(%s/%d) %s ]%s:%c\n", __FILE__, __LINE__, __func__, #i, (char)(i)); fflush(stderr);
+
 #endif
 
 
